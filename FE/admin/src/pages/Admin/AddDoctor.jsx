@@ -12,7 +12,8 @@ const AddDoctor = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [fees, setFees] = useState('')
-    const [speciality, setSpeciality] = useState('General physician')
+    const [speciality, setSpeciality] = useState('General Dentistry')
+    const [about, setAbout] = useState('')
     const { backendUrl } = useContext(AppContext)
     const { aToken } = useContext(AdminContext)
 
@@ -30,6 +31,7 @@ const AddDoctor = () => {
             formData.append('password', password)
             formData.append('fees', Number(fees))
             formData.append('speciality', speciality)
+            formData.append('about', about)
 
 
             // console log formdata
@@ -45,6 +47,7 @@ const AddDoctor = () => {
                 setPassword('')
                 setEmail('')
                 setFees('')
+                setAbout('')
             } else {
                 toast.error(data.message)
             }
@@ -93,8 +96,13 @@ const AddDoctor = () => {
 
 
                         <div className='flex-1 flex flex-col gap-1'>
-                            <p>Fees</p>
+                            <p>Salary</p>
                             <input onChange={e => setFees(e.target.value)} value={fees} className='border rounded px-3 py-2' type="number" placeholder='Doctor fees' required />
+                        </div>
+
+                        <div className='flex-1 flex flex-col gap-1'>
+                            <p>About Doctor</p>
+                            <input onChange={e => setAbout(e.target.value)} value={about} className='border rounded px-3 py-2' type="text" placeholder='About' required />
                         </div>
 
                     </div>
@@ -104,19 +112,17 @@ const AddDoctor = () => {
                         <div className='flex-1 flex flex-col gap-1'>
                             <p>Speciality</p>
                             <select onChange={e => setSpeciality(e.target.value)} value={speciality} className='border rounded px-2 py-2'>
-                                <option value="General physician">General physician</option>
-                                <option value="Gynecologist">Gynecologist</option>
-                                <option value="Dermatologist">Dermatologist</option>
-                                <option value="Pediatricians">Pediatricians</option>
-                                <option value="Neurologist">Neurologist</option>
-                                <option value="Gastroenterologist">Gastroenterologist</option>
+                                <option value="General Dentistry">General Dentistry</option>
+                                <option value="Orthodontics">Orthodontics</option>
+                                <option value="Prosthodontics">Prosthodontics</option>
+                                <option value="Pediatric Dentistry">Pediatric Dentistry</option>
+                                <option value="Oral Pathology">Oral Pathology</option>
+                                <option value="Cosmetic Dentistry">Cosmetic Dentistry</option>
+                                <option value="Oral Radiology">Oral Radiology</option>
+                                <option value="Implantology">Implantology</option>
                             </select>
                         </div>
-
-
-                      
-
-                        
+            
 
                     </div>
 

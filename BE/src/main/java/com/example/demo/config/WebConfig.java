@@ -10,6 +10,7 @@ public class WebConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
                 .allowedOrigins("http://localhost:5174") // URL của React
+                .allowedOrigins("http://localhost:5173") // Nguồn gốc được phép
                 .allowedMethods("GET", "POST", "PUT", "DELETE");
     }
 }

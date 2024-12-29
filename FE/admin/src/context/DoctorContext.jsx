@@ -10,7 +10,9 @@ const DoctorContextProvider = (props) => {
     const backendUrl = import.meta.env.VITE_BACKEND_URL
 
     const [dToken, setDToken] = useState(localStorage.getItem('dToken') ? localStorage.getItem('dToken') : '')
+    const [dentistId, setDentistId] = useState(localStorage.getItem('dentistId') ? localStorage.getItem('dentistId') : '')
     const [appointments, setAppointments] = useState([])
+    const [totalFees, setTotalFees] = useState([])
     const [dashData, setDashData] = useState(false)
     const [profileData, setProfileData] = useState(false)
 
@@ -18,7 +20,7 @@ const DoctorContextProvider = (props) => {
     const getAppointments = async () => {
         try {
 
-            const { data } = await axios.get(backendUrl + '/api/doctor/appointments', { headers: { dToken } })
+            const { data } = await axios.get(`${backendUrl}/api/doctor/appointments?dentistId=${dentistId}`, { headers: { dToken } })
 
             if (data.success) {
                 setAppointments(data.appointments.reverse())
@@ -36,8 +38,7 @@ const DoctorContextProvider = (props) => {
     const getProfileData = async () => {
         try {
 
-            const { data } = await axios.get(backendUrl + '/api/doctor/profile', { headers: { dToken } })
-            console.log(data.profileData)
+            const { data } = await axios.get(`${backendUrl}/api/doctor/profile?dentistId=${dentistId}`, { headers: { dToken } })
             setProfileData(data.profileData)
 
         } catch (error) {
@@ -95,29 +96,33 @@ const DoctorContextProvider = (props) => {
     // Getting Doctor dashboard data using API
     const getDashData = async () => {
         try {
-
-            const { data } = await axios.get(backendUrl + '/api/doctor/dashboard', { headers: { dToken } })
-
+            const { data } = await axios.get(`${backendUrl}/api/doctor/dashboard?dentistId=${dentistId}`, {
+                headers: { dToken }
+            });
+    
             if (data.success) {
-                setDashData(data.dashData)
+                setDashData(data.dashData);
+                setTotalFees(data.totalFees)
             } else {
-                toast.error(data.message)
+                toast.error(data.message);
             }
-
         } catch (error) {
-            console.log(error)
-            toast.error(error.message)
+            console.log(error);
+            toast.error(error.message);
         }
+    };
+    
 
-    }
 
     const value = {
         dToken, setDToken, backendUrl,
+        dentistId, setDentistId,
         appointments,
         getAppointments,
         cancelAppointment,
         completeAppointment,
         dashData, getDashData,
+        totalFees, setTotalFees,
         profileData, setProfileData,
         getProfileData,
     }

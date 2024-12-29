@@ -13,8 +13,15 @@ import java.util.Date;
 @Builder
 public class AppointmentDto {
     private int appointmentId;
+    private String patientName;
     private int patientId;
+    private String patientImgUrl;
     private Date appointmentDate;
     private Time appointmentTime;
     private String notes;
+    private Boolean cancelled;
+    private Boolean isCompleted;
+    private DentistDto dentist;
+    private double fees;
+    private Boolean isPaid;
 }

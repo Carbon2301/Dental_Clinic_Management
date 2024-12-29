@@ -52,6 +52,10 @@ public class DentistServiceImpl implements DentistService {
                 registrationDto.getPassword(),
                 registrationDto.getFees(),
                 registrationDto.getSpeciality(),
+                registrationDto.getPosition(),
+                registrationDto.getStatus(),
+                registrationDto.getIsWorking(),
+                registrationDto.getAbout(),
                 Arrays.asList(userRole));
         Dentist savedDentist = dentistRepository.save(user);
         return modelMapper.map(savedDentist, DentistDto.class);
@@ -75,4 +79,39 @@ public class DentistServiceImpl implements DentistService {
         return false;
     }
 
+    @Override
+    public List<Dentist> findAll() {
+        List<Dentist> dentists = dentistRepository.findAll();
+        return dentists;
+    }
+
+    @Override
+    public DentistDto findDentistById(int dentistId) {
+        Optional<Dentist> dentistOptional = dentistRepository.findById(dentistId);
+        return dentistOptional.map(d -> modelMapper.map(d, DentistDto.class)).orElse(null);
+    }
+
+    @Override
+    public DentistDto update(DentistDto dentistDto) {
+        Optional<Dentist> dentistOptional = dentistRepository.findById(dentistDto.getDentistId());
+        if (dentistOptional.isPresent()) {
+            Dentist dentist = dentistOptional.get();
+            dentist.setName(dentistDto.getName());
+            dentist.setImgUrl(dentistDto.getImgUrl());
+            dentist.setFees(dentistDto.getFees());
+            dentist.setIsWorking(dentistDto.getIsWorking());
+            dentist.setSpeciality(dentistDto.getSpeciality());
+            dentist.setStatus(dentistDto.getStatus());
+            dentist.setAbout(dentistDto.getAbout());
+            dentistRepository.save(dentist);
+            return modelMapper.map(dentist, DentistDto.class);
+        }
+        return null;
+    }
+
+    @Override
+    public DentistDto findDentistByEmail(String email) {
+        Dentist dentist = dentistRepository.findByEmail(email);
+        return modelMapper.map(dentist, DentistDto.class);
+    }
 }

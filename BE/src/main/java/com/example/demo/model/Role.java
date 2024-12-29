@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -28,6 +29,7 @@ public class Role {
             inverseJoinColumns = @JoinColumn(name = "dentist_id")
     )
     @ToString.Exclude
+    @JsonIgnore
     private List<Dentist> dentists;
 
     public Role(String name) {

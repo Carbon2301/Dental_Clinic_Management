@@ -15,9 +15,10 @@ public class PatientDto {
     private int id;
     private String fullName;
     private Date dob;
-    private String phoneNumber;
+    private String phone;
     private String sex;
     private String email;
-    private String cccd;
+    private String password;
     private String address;
+    private String image;
 }

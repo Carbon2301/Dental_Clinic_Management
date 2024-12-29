@@ -6,35 +6,35 @@ const About = () => {
     <div>
 
       <div className='text-center text-2xl pt-10 text-[#707070]'>
-        <p>ABOUT <span className='text-gray-700 font-semibold'>US</span></p>
+        <p>ABOUT <span className='text-gray-700 font-semibold'> US</span></p>
       </div>
 
       <div className='my-10 flex flex-col md:flex-row gap-12'>
         <img className='w-full md:max-w-[360px]' src={assets.about_image} alt="" />
         <div className='flex flex-col justify-center gap-6 md:w-2/4 text-sm text-gray-600'>
-          <p>Welcome to Prescripto, your trusted partner in managing your healthcare needs conveniently and efficiently. At Prescripto, we understand the challenges individuals face when it comes to scheduling doctor appointments and managing their health records.</p>
-          <p>Prescripto is committed to excellence in healthcare technology. We continuously strive to enhance our platform, integrating the latest advancements to improve user experience and deliver superior service. Whether you're booking your first appointment or managing ongoing care, Prescripto is here to support you every step of the way.</p>
-          <b className='text-gray-800'>Our Vision</b>
-          <p>Our vision at Prescripto is to create a seamless healthcare experience for every user. We aim to bridge the gap between patients and healthcare providers, making it easier for you to access the care you need, when you need it.</p>
+          <p>Chào mừng bạn đến với Phòng Khám Răng Miệng Hust, đối tác tin cậy của bạn trong việc quản lý nhu cầu chăm sóc sức khỏe răng miệng một cách tiện lợi và hiệu quả. Tại Phòng Khám Răng Miệng Hust, chúng tôi hiểu những thách thức mà mọi người gặp phải khi lên lịch hẹn với bác sĩ và quản lý hồ sơ sức khỏe răng miệng của mình.</p>
+          <p>HUST DENTAL CLINIC cam kết mang lại chất lượng xuất sắc trong chăm sóc sức khỏe răng miệng. Chúng tôi không ngừng cải tiến dịch vụ, tích hợp các tiến bộ mới nhất để nâng cao trải nghiệm của bệnh nhân và cung cấp sự chăm sóc vượt trội. Dù bạn đang đặt lịch hẹn lần đầu tiên hay quản lý các điều trị lâu dài, Phòng Khám Răng Miệng Hust luôn đồng hành cùng bạn.</p>
+          <b className='text-gray-800'>Tầm Nhìn Của Chúng Tôi</b>
+          <p>Tầm nhìn của chúng tôi tại Phòng Khám Răng Miệng Hust là tạo ra một trải nghiệm chăm sóc sức khỏe răng miệng liền mạch cho mọi bệnh nhân. Chúng tôi mong muốn thu hẹp khoảng cách giữa bệnh nhân và các chuyên gia nha khoa, giúp bạn dễ dàng tiếp cận dịch vụ chăm sóc khi bạn cần.</p>
         </div>
       </div>
 
       <div className='text-xl my-4'>
-        <p>WHY  <span className='text-gray-700 font-semibold'>CHOOSE US</span></p>
+        <p><span className='text-gray-700 font-semibold'>WHY CHOOSE US</span></p>
       </div>
 
       <div className='flex flex-col md:flex-row mb-20'>
         <div className='border px-10 md:px-16 py-8 sm:py-16 flex flex-col gap-5 text-[15px] hover:bg-primary hover:text-white transition-all duration-300 text-gray-600 cursor-pointer'>
-          <b>EFFICIENCY:</b>
-          <p>Streamlined appointment scheduling that fits into your busy lifestyle.</p>
+          <b>HIỆU QUẢ:</b>
+          <p>Hệ thống đặt lịch hẹn nhanh chóng, phù hợp với lịch trình bận rộn của bạn.</p>
         </div>
         <div className='border px-10 md:px-16 py-8 sm:py-16 flex flex-col gap-5 text-[15px] hover:bg-primary hover:text-white transition-all duration-300 text-gray-600 cursor-pointer'>
-          <b>CONVENIENCE: </b>
-          <p>Access to a network of trusted healthcare professionals in your area.</p>
+          <b>TIỆN LỢI:</b>
+          <p>Truy cập mạng lưới các bác sĩ nha khoa uy tín trong khu vực của bạn.</p>
         </div>
         <div className='border px-10 md:px-16 py-8 sm:py-16 flex flex-col gap-5 text-[15px] hover:bg-primary hover:text-white transition-all duration-300 text-gray-600 cursor-pointer'>
-          <b>PERSONALIZATION:</b>
-          <p >Tailored recommendations and reminders to help you stay on top of your health.</p>
+          <b>CÁ NHÂN HÓA:</b>
+          <p>Các đề xuất và nhắc nhở được cá nhân hóa giúp bạn theo dõi sức khỏe răng miệng của mình.</p>
         </div>
       </div>
 

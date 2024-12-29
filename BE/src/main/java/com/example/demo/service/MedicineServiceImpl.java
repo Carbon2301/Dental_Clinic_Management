@@ -1,7 +1,9 @@
 package com.example.demo.service;
 
 import com.example.demo.dto.MedicineDto;
+import com.example.demo.dto.PatientDto;
 import com.example.demo.model.Medicine;
+import com.example.demo.model.Patient;
 import com.example.demo.repository.MedicineRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -41,5 +43,4 @@ public class MedicineServiceImpl implements MedicineService {
         MedicineDto medicineDto = modelMapper.map(medicine, MedicineDto.class);
         return medicineDto;
     }
-
 }

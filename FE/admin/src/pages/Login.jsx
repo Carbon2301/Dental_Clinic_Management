@@ -37,6 +37,7 @@ const Login = () => {
         if (response.data.success) {
           setDToken(response.data.token);
           localStorage.setItem('dToken', response.data.token);
+          localStorage.setItem('dentistId', response.data.dentistId);
         } else {
           toast.error(response.data.message);
         }
@@ -62,7 +63,7 @@ const Login = () => {
         <button className='bg-primary text-white w-full py-2 rounded-md text-base'>Login</button>
         {
           state === 'Admin'
-            ? <p>Doctor Login? <span onClick={() => setState('Doctor')} className='text-primary underline cursor-pointer'>Click here</span></p>
+            ? <p>Dentist Login? <span onClick={() => setState('Doctor')} className='text-primary underline cursor-pointer'>Click here</span></p>
             : <p>Admin Login? <span onClick={() => setState('Admin')} className='text-primary underline cursor-pointer'>Click here</span></p>
         }
       </div>

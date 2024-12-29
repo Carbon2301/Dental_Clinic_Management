@@ -1,1 +1,2 @@
 # Dental_Clinic_Management
+Để chạy sql hãy chạy lệnh sau: docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Dentalclinic@20241" -p 1444:1433 --name sql_2019 --hostname sql_2019 -d mcr.microsoft.com/mssql/server:2019-latest

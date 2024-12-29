@@ -21,3 +21,75 @@
 ::-webkit-scrollbar {
     @apply hidden
 }
+/* Đảm bảo rằng overlay có hiệu ứng mờ khi mở modal */
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Màu nền tối mờ */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transform: scale(1.1);
+  }
+  
+  /* Khi modal mở, overlay sẽ có opacity */
+  .ReactModal__Overlay--after-open {
+    opacity: 1;
+  }
+  
+  /* Hiệu ứng 3D cho modal */
+  .modal {
+    background-color: white;
+    width: 400px;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: scale(0.8) rotateX(30deg) rotateY(15deg); /* Modal bắt đầu nhỏ và nghiêng */
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.4s ease;
+    transform-origin: center;
+  }
+  
+  /* Khi modal mở, modal trở lại kích thước bình thường và xoay nhẹ */
+  .ReactModal__Content--after-open {
+    opacity: 1;
+    transform: scale(1) rotateX(0deg) rotateY(0deg);
+  }
+  
+  /* Thêm hiệu ứng khi hover vào nút */
+  button {
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+  
+  button:hover {
+    transform: translateY(-5px) rotateX(5deg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:active {
+    transform: translateY(0) rotateX(0deg);
+    box-shadow: none;
+  }
+  
+  /* Styling cho các nút */
+  button.bg-green-500 {
+    background-color: #48bb78;
+  }
+  
+  button.bg-red-500 {
+    background-color: #f56565;
+  }
+  
+  button.bg-green-500:hover {
+    background-color: #38a169;
+  }
+  
+  button.bg-red-500:hover {
+    background-color: #e53e3e;
+  }
+  

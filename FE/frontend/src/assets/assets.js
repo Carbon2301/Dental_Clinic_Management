@@ -4,7 +4,8 @@ import group_profiles from './group_profiles.png'
 import profile_pic from './profile_pic.png'
 import contact_image from './contact_image.png'
 import about_image from './about_image.png'
-import logo from './logo.svg'
+// import logo from './HustLogo.png'
+import logo from './Logotest.png'
 import dropdown_icon from './dropdown_icon.svg'
 import menu_icon from './menu_icon.svg'
 import cross_icon from './cross_icon.png'
@@ -30,12 +31,15 @@ import doc12 from './doc12.png'
 import doc13 from './doc13.png'
 import doc14 from './doc14.png'
 import doc15 from './doc15.png'
-import Dermatologist from './Dermatologist.svg'
-import Gastroenterologist from './Gastroenterologist.svg'
-import General_physician from './General_physician.svg'
-import Gynecologist from './Gynecologist.svg'
-import Neurologist from './Neurologist.svg'
-import Pediatricians from './Pediatricians.svg'
+import General_Dentistry from './General Dentistry.svg'
+import Prosthodontics from './Prosthodontics.png'
+import Orthodontic from './Orthodontic.svg'
+import Pediatric_Dentistry from './Pediatric_Dentistry.jpg'
+import Oral_Pathology from './Oral_Pathology.png'
+import Cosmetic_Dentistry from './Cosmetic_Dentistry.png'
+import Oral_Radiology from './Oral_Radiology.webp'
+import Implantology from './Implantology.png'
+
 
 
 export const assets = {
@@ -60,30 +64,39 @@ export const assets = {
 
 export const specialityData = [
     {
-        speciality: 'General physician',
-        image: General_physician
+        speciality: 'General Dentistry',
+        image: General_Dentistry,
     },
     {
-        speciality: 'Gynecologist',
-        image: Gynecologist
+        speciality: 'Prosthodontics',
+        image: Prosthodontics,
     },
     {
-        speciality: 'Dermatologist',
-        image: Dermatologist
+        speciality: 'Orthodontic',
+        image: Orthodontic,
     },
     {
-        speciality: 'Pediatricians',
-        image: Pediatricians
+        speciality: 'Pediatric Dentistry',
+        image: Pediatric_Dentistry,
     },
     {
-        speciality: 'Neurologist',
-        image: Neurologist
+        speciality: 'Oral Pathology',
+        image: Oral_Pathology,
     },
     {
-        speciality: 'Gastroenterologist',
-        image: Gastroenterologist
+        speciality: 'Cosmetic Dentistry',
+        image: Cosmetic_Dentistry,
     },
-]
+    {
+        speciality: 'Oral Radiology',
+        image: Oral_Radiology,
+    },
+    {
+        speciality: 'Implantology',
+        image: Implantology,
+    },
+
+];
 
 export const doctors = [
     {

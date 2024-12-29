@@ -18,29 +18,35 @@ const Login = () => {
   const onSubmitHandler = async (event) => {
     event.preventDefault();
 
+    try {
+      let response;
     if (state === 'Sign Up') {
 
-      const { data } = await axios.post(backendUrl + '/api/user/register', { name, email, password })
+      response = await axios.post(backendUrl + '/api/user/register', { name, email, password })
 
-      if (data.success) {
-        localStorage.setItem('token', data.token)
-        setToken(data.token)
+      if (response.data.success) {
+        localStorage.setItem('token', response.data.token)
+        setToken(response.data.token)
       } else {
-        toast.error(data.message)
+        toast.error(response.data.message)
       }
 
-    } else {
-
-      const { data } = await axios.post(backendUrl + '/api/user/login', { email, password })
-
-      if (data.success) {
-        localStorage.setItem('token', data.token)
-        setToken(data.token)
       } else {
-        toast.error(data.message)
-      }
 
-    }
+      response = await axios.post(backendUrl + '/api/user/login', { email, password })
+
+      if (response.data.success) {
+        localStorage.setItem('token', response.data.token)
+        localStorage.setItem('userId', response.data.userId);
+        setToken(response.data.token)
+      } else {
+        toast.error(response.data.message)
+        }
+      }
+        } catch (error) {
+          // Bắt lỗi nếu có vấn đề kết nối hoặc lỗi hệ thống
+          toast.error("Your email or password is wrong");
+      }
 
   }
 

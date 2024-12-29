@@ -29,8 +29,10 @@ public class Treatment {
     @JoinColumn(name = "dentist_id", nullable = false)
     private Dentist dentist;
 
-    @Column(name = "treatment_date", nullable = false)
-    private Date treatmentDate;
+    @ManyToOne
+    @JoinColumn(name = "appointment_id", nullable = false)
+    private Appointment appointment;
+
 
     @Column(name = "fees", nullable = false)
     private double fees;
@@ -38,11 +40,4 @@ public class Treatment {
     @Column(name = "notes")
     private String notes;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "treatment_service",
-            joinColumns = @JoinColumn(name = "treatment_id"),
-            inverseJoinColumns = @JoinColumn(name = "service_id")
-    )
-    private List<Service> services;
 }

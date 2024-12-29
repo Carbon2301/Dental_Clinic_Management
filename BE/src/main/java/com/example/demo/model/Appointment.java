@@ -26,7 +26,7 @@ public class Appointment {
     @JoinColumn(name = "patient_id", nullable = false)
     private Patient patient;
 
-    @Column(name = "appointmemt_date")
+    @Column(name = "appointment_date")
     private Date appointmentDate;
 
     @Column(name = "appointment_time")
@@ -35,4 +35,12 @@ public class Appointment {
     @Column(name = "notes")
     private String notes;
 
+    @Column(name = "cancelled")
+    private Boolean cancelled;
+
+    @Column(name = "is_completed")
+    private Boolean isCompleted;
+
+    @Column(name = "is_paid")
+    private Boolean isPaid;
 }
