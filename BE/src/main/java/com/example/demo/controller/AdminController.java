@@ -303,7 +303,17 @@ public class AdminController {
             }
 
             // Toggle availability
-            dentist.setStatus(dentist.getStatus() == 1 ? 0 : 1);
+            // Khi thay đổi status thì cũng đổi isWorking luôn theo
+            // status là trạng thái còn làm việc ở cty không
+            // isWorking là có sẵn sàng nhận lịch và đi làm hay không
+            if (dentist.getStatus() == 1) {
+                dentist.setStatus(0);
+                dentist.setIsWorking(0); // Set isWorking to 0 when status is 0
+            } else {
+                dentist.setStatus(1);
+                dentist.setIsWorking(1);
+            }
+
             dentistService.update(dentist);
 
             response.put("success", true);
